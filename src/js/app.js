@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dividerEl = document.querySelector(".slider__divider");
   let dragging = false;
   let imagesContainerElWidth;
-  const imagesContainerLeftOffset = imagesContainerEl.offsetLeft;
+  let imagesContainerLeftOffset;
 
   function getOffset(clientX) {
     const offset = clientX - imagesContainerLeftOffset;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function adjustImageSize() {
     imagesContainerElWidth = imagesContainerEl.offsetWidth;
-
+    imagesContainerLeftOffset = imagesContainerEl.offsetLeft;
     image1El.style.width = imagesContainerElWidth + "px";
     image2El.style.width = imagesContainerElWidth + "px";
   }
